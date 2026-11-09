@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0a1c"/><stop offset="1" stop-color="#161034"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" x2="1"><stop offset="0" stop-color="#5b4bff"/><stop offset="1" stop-color="#8f7dff"/></linearGradient>
+    <linearGradient id="bar2" x1="0" x2="1"><stop offset="0" stop-color="#9b4bff"/><stop offset="1" stop-color="#e07bff"/></linearGradient>
+    <linearGradient id="bar3" x1="0" x2="1"><stop offset="0" stop-color="#ff7a5b"/><stop offset="1" stop-color="#ffb08a"/></linearGradient>
+    <linearGradient id="bar4" x1="0" x2="1"><stop offset="0" stop-color="#2bb8ff"/><stop offset="1" stop-color="#7ee0ff"/></linearGradient>
+    <linearGradient id="curve" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset=".4" stop-color="#ffffff" stop-opacity=".9"/><stop offset="1" stop-color="#ffb08a"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="glow" x="-50%" y="-200%" width="200%" height="500%">
+      <feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .08 0"/>
+    </filter>
+  </defs>
+  <rect width="800" height="550" fill="url(#bg)"/>
+  <g filter="url(#blur)">
+    <circle cx="150" cy="120" r="150" fill="#5b4bff" opacity=".6"/>
+    <circle cx="700" cy="460" r="170" fill="#ff8a5b" opacity=".45"/>
+  </g>
+
+  <!-- grilla temporal -->
+  <g stroke="#ffffff" stroke-opacity=".08">
+    <line x1="160" y1="60" x2="160" y2="490"/><line x1="320" y1="60" x2="320" y2="490"/>
+    <line x1="480" y1="60" x2="480" y2="490"/><line x1="640" y1="60" x2="640" y2="490"/>
+  </g>
+  <g font-family="Inter, sans-serif" font-size="11" fill="#ffffff" fill-opacity=".45" letter-spacing="1.5">
+    <text x="80" y="50">Q1</text><text x="240" y="50">Q2</text><text x="400" y="50">Q3</text><text x="560" y="50">Q4</text><text x="700" y="50">Q1</text>
+  </g>
+
+  <!-- barras del roadmap -->
+  <g filter="url(#glow)">
+    <rect x="60" y="110" width="230" height="22" rx="11" fill="url(#bar1)"/>
+    <rect x="200" y="170" width="300" height="22" rx="11" fill="url(#bar2)"/>
+    <rect x="120" y="230" width="160" height="22" rx="11" fill="url(#bar4)" opacity=".85"/>
+    <rect x="360" y="290" width="270" height="22" rx="11" fill="url(#bar3)"/>
+    <rect x="480" y="350" width="240" height="22" rx="11" fill="url(#bar1)" opacity=".9"/>
+    <rect x="300" y="410" width="180" height="22" rx="11" fill="url(#bar4)" opacity=".75"/>
+  </g>
+  <!-- barras descartadas -->
+  <g fill="none" stroke="#ffffff" stroke-opacity=".25" stroke-dasharray="4 5">
+    <rect x="560" y="110" width="180" height="22" rx="11"/>
+    <rect x="560" y="230" width="140" height="22" rx="11"/>
+  </g>
+
+  <!-- curva de impacto predicho -->
+  <path d="M40 480 C 220 470, 330 420, 440 330 S 640 120, 770 90" fill="none" stroke="url(#curve)" stroke-width="2.2"/>
+  <circle cx="770" cy="90" r="6" fill="#ffffff" filter="url(#glow)"/>
+
+  <rect width="800" height="550" filter="url(#grain)"/>
+</svg>

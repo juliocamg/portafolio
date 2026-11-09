@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f0c26"/><stop offset="1" stop-color="#1d1147"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="55"/></filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .08 0"/>
+    </filter>
+  </defs>
+  <rect width="800" height="550" fill="url(#bg)"/>
+  <g filter="url(#blur)">
+    <circle cx="220" cy="240" r="140" fill="#5b4bff" opacity=".8"/>
+    <circle cx="560" cy="180" r="120" fill="#c25bff" opacity=".7"/>
+    <circle cx="500" cy="420" r="130" fill="#ff8a5b" opacity=".55"/>
+  </g>
+
+  <!-- límites de clusters -->
+  <g fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-dasharray="3 6">
+    <circle cx="220" cy="240" r="115"/><circle cx="560" cy="180" r="95"/><circle cx="500" cy="420" r="90"/>
+  </g>
+
+  <!-- puntos (insights) -->
+  <g filter="url(#glow)">
+    <g fill="#c9c1ff">
+      <circle cx="180" cy="200" r="4"/><circle cx="210" cy="260" r="5"/><circle cx="250" cy="220" r="3.5"/>
+      <circle cx="160" cy="280" r="3"/><circle cx="240" cy="300" r="4"/><circle cx="270" cy="170" r="3"/>
+      <circle cx="200" cy="170" r="2.5"/><circle cx="290" cy="260" r="3"/><circle cx="150" cy="230" r="2.5"/>
+      <circle cx="225" cy="230" r="7" fill="#ffffff"/>
+    </g>
+    <g fill="#f0b8ff">
+      <circle cx="530" cy="150" r="4"/><circle cx="580" cy="200" r="3.5"/><circle cx="600" cy="150" r="3"/>
+      <circle cx="520" cy="210" r="3"/><circle cx="620" cy="190" r="2.5"/><circle cx="555" cy="120" r="2.5"/>
+      <circle cx="560" cy="175" r="6" fill="#ffffff"/>
+    </g>
+    <g fill="#ffc6ad">
+      <circle cx="470" cy="400" r="4"/><circle cx="520" cy="440" r="3.5"/><circle cx="540" cy="390" r="3"/>
+      <circle cx="460" cy="450" r="2.5"/><circle cx="560" cy="430" r="2.5"/>
+      <circle cx="500" cy="415" r="6" fill="#ffffff"/>
+    </g>
+    <!-- puntos sueltos -->
+    <g fill="#ffffff" opacity=".4">
+      <circle cx="80" cy="460" r="2"/><circle cx="700" cy="320" r="2"/><circle cx="380" cy="80" r="2"/>
+      <circle cx="720" cy="480" r="1.5"/><circle cx="360" cy="320" r="1.8"/><circle cx="100" cy="90" r="1.5"/>
+    </g>
+  </g>
+
+  <!-- conexiones entre centroides -->
+  <g stroke="#ffffff" stroke-opacity=".35" stroke-width="1">
+    <line x1="225" y1="230" x2="560" y2="175"/><line x1="560" y1="175" x2="500" y2="415"/><line x1="500" y1="415" x2="225" y2="230"/>
+  </g>
+
+  <!-- etiquetas -->
+  <g font-family="Inter, sans-serif" font-size="12" fill="#ffffff" fill-opacity=".75" letter-spacing="1.5">
+    <text x="130" y="380">ONBOARDING</text>
+    <text x="600" y="295">PAGOS</text>
+    <text x="580" y="520">CONFIANZA</text>
+  </g>
+  <rect width="800" height="550" filter="url(#grain)"/>
+</svg>
