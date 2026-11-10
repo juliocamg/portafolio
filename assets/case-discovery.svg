@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f0c26"/><stop offset="1" stop-color="#1d1147"/>
+      <stop offset="0" stop-color="#07121f"/><stop offset="1" stop-color="#0d2238"/>
     </linearGradient>
     <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="55"/></filter>
     <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
@@ -15,7 +15,7 @@
   <rect width="800" height="550" fill="url(#bg)"/>
   <g filter="url(#blur)">
     <circle cx="220" cy="240" r="140" fill="#5b4bff" opacity=".8"/>
-    <circle cx="560" cy="180" r="120" fill="#c25bff" opacity=".7"/>
+    <circle cx="560" cy="180" r="120" fill="#1fb6d9" opacity=".7"/>
     <circle cx="500" cy="420" r="130" fill="#ff8a5b" opacity=".55"/>
   </g>
 
@@ -32,7 +32,7 @@
       <circle cx="200" cy="170" r="2.5"/><circle cx="290" cy="260" r="3"/><circle cx="150" cy="230" r="2.5"/>
       <circle cx="225" cy="230" r="7" fill="#ffffff"/>
     </g>
-    <g fill="#f0b8ff">
+    <g fill="#a8ecff">
       <circle cx="530" cy="150" r="4"/><circle cx="580" cy="200" r="3.5"/><circle cx="600" cy="150" r="3"/>
       <circle cx="520" cy="210" r="3"/><circle cx="620" cy="190" r="2.5"/><circle cx="555" cy="120" r="2.5"/>
       <circle cx="560" cy="175" r="6" fill="#ffffff"/>
@@ -56,9 +56,9 @@
 
   <!-- etiquetas -->
   <g font-family="Inter, sans-serif" font-size="12" fill="#ffffff" fill-opacity=".75" letter-spacing="1.5">
-    <text x="130" y="380">ONBOARDING</text>
-    <text x="600" y="295">PAGOS</text>
-    <text x="580" y="520">CONFIANZA</text>
+    <text x="130" y="380">CRM</text>
+    <text x="600" y="295">CANALES DIGITALES</text>
+    <text x="580" y="520">CORE BANCARIO</text>
   </g>
   <rect width="800" height="550" filter="url(#grain)"/>
 </svg>
